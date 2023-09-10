@@ -1,0 +1,13 @@
+.element__description {
+  grid-area: description;
+  /* margin: 25px 0 0; */
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29.05px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 178px;
+  width: 100%;
+}

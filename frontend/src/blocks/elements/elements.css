@@ -1,0 +1,18 @@
+.elements {
+  color: black;
+  max-width: 880px;
+  margin: 0 auto 0;
+  padding-top: 51px;
+}
+
+@media screen and (max-width: 929px) {
+  .elements {
+    width: 88.125%;
+    min-width: 282px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .elements {
+    padding-top: 36px;
+  }
+}

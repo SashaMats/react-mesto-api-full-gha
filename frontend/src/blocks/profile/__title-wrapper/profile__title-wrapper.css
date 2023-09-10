@@ -1,0 +1,13 @@
+.profile__title-wrapper {
+  position: relative;
+  max-width: 336px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 670px) {
+  .profile__title-wrapper {
+    max-width: 217px;
+  }
+}

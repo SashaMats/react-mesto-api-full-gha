@@ -1,5 +1,7 @@
+/* eslint-disable import/order */
 /* eslint-disable no-useless-escape */
 /* eslint-disable import/no-extraneous-dependencies */
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,6 +12,8 @@ const cardRouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const { auth } = require('./middlewares/auth');
 const NotFoundError = require('./errors/notFoundError');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('cors');
 
 const { PORT = 3000, DB_ADRESS = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
@@ -18,9 +22,11 @@ mongoose.connect(DB_ADRESS, {
 });
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(requestLogger);
 app.post('/signup', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),
@@ -47,6 +53,8 @@ app.use(userRouter);
 app.use('*', (req, res) => {
   throw new NotFoundError('Такой страницы нет');
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 
