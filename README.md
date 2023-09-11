@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.98.120
+IP-адрес IP 51.250.16.131
 
 Frontend https://mats-creation.nomoredomainsicu.ru
 
