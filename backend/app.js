@@ -15,18 +15,21 @@ const NotFoundError = require('./errors/notFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('cors');
 
-const { PORT = 3000, DB_ADRESS = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 3000, DB_ADRESS = 'mongodb://localhost:27017/mestodb' } = process.env;
 
 mongoose.connect(DB_ADRESS, {
   useNewUrlParser: true,
 });
 
 const app = express();
+
 app.use(cors());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
+
 app.post('/signup', celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30),

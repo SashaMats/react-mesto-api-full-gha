@@ -1,5 +1,6 @@
 
 // const baseUrl = 'https://auth.nomoreparties.co'
+// const baseUrl = 'https://api.mats-creation.nomoredomainsicu.ru'
 const baseUrl = 'http://localhost:3000'
 
 function getResponseData(res) {

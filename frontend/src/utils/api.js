@@ -110,6 +110,7 @@
 }
 
 export const apiData = new Api({
+  // baseUrl: 'http://api.mats-creation.nomoredomainsicu.ru',
   // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
   baseUrl: 'http://localhost:3000',
 
