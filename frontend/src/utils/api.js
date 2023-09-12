@@ -112,7 +112,7 @@
 export const apiData = new Api({
   // baseUrl: 'http://api.mats-creation.nomoredomainsicu.ru',
   // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://localhost:3000',
 
   // headers: {
     // authorization: 'c8278fb8-59b1-406f-bd93-93c438e0e690',

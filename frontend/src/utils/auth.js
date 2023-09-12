@@ -1,7 +1,7 @@
 
 // const baseUrl = 'https://auth.nomoreparties.co'
 // const baseUrl = 'https://api.mats-creation.nomoredomainsicu.ru'
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'https://localhost:3000'
 
 function getResponseData(res) {
   return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status} ${res.statusText}`)
